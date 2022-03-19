@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="400" height="400" viewBox="0 0 400 400" xml:space="preserve">
+<desc>Created with Fabric.js 3.5.0</desc>
+<defs>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+<g transform="matrix(16.6319 0 0 16.6319 199.9995 199.9995)" id="852945">
+<g style="" vector-effect="non-scaling-stroke">
+		<g transform="matrix(1 0 0 1 0 1)">
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(39,174,96); fill-rule: nonzero; opacity: 1;" transform=" translate(-12, -12)" d="m 22 12 c 0 5.523 -4.477 10 -10 10 c -5.5228 0 -10 -4.477 -10 -10 c 0 -5.5228 4.4772 -10 10 -10 c 5.523 0 10 4.4772 10 10 z" stroke-linecap="round"/>
+</g>
+		<g transform="matrix(1 0 0 1 0 0)">
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(46,204,113); fill-rule: nonzero; opacity: 1;" transform=" translate(-12, -12)" d="m 22 12 c 0 5.523 -4.477 10 -10 10 c -5.5228 0 -10 -4.477 -10 -10 c 0 -5.5228 4.4772 -10 10 -10 c 5.523 0 10 4.4772 10 10 z" stroke-linecap="round"/>
+</g>
+		<g transform="matrix(1 0 0 1 -0.25 2.1)">
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(39,174,96); fill-rule: nonzero; opacity: 1;" transform=" translate(-11.75, -1042.5)" d="m 16 1037.4 l -6 6 l -2.5 -2.5 l -2.125 2.1 l 2.5 2.5 l 2 2 l 0.125 0.1 l 8.125 -8.1 l -2.125 -2.1 z" stroke-linecap="round"/>
+</g>
+		<g transform="matrix(1 0 0 1 -0.25 1.1)">
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(236,240,241); fill-rule: nonzero; opacity: 1;" transform=" translate(-11.75, -1041.5)" d="m 16 1036.4 l -6 6 l -2.5 -2.5 l -2.125 2.1 l 2.5 2.5 l 2 2 l 0.125 0.1 l 8.125 -8.1 l -2.125 -2.1 z" stroke-linecap="round"/>
+</g>
+</g>
+</g>
+</svg>

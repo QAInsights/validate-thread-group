@@ -18,7 +18,7 @@ class ValidateTGAction extends AbstractAction {
         super("Validate Thread Group(s)");
         putValue(Action.ACTION_COMMAND_KEY, "validate_tg");
         putValue(Action.ACCELERATOR_KEY, VALIDATE_TG);
-        putValue(Action.SMALL_ICON, ValidateTGMenuItem.getButtonIcon(12));
+        putValue(Action.SMALL_ICON, ValidateTGMenuItem.getButtonIcon());
     }
 
     public void actionPerformed(ActionEvent actionEvent) {

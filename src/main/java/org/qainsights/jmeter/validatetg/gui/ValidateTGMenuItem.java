@@ -24,8 +24,8 @@ public class ValidateTGMenuItem extends JMenuItem implements ActionListener{
         addToolbarIcon();
     }
 
-    public static ImageIcon getButtonIcon(int pixelSize) {
-        String sizedImage = String.format("/org/qainsights/jmeter/validatetg/validate-tg-icon-%2dx%2d.png", pixelSize, pixelSize);
+    public static ImageIcon getButtonIcon() {
+        String sizedImage = "/org/qainsights/jmeter/validatetg/check-mark.svg";
         return new ImageIcon(Objects.requireNonNull(ValidateTGMenuItem.class.getResource(sizedImage)));
     }
 
@@ -57,7 +57,7 @@ public class ValidateTGMenuItem extends JMenuItem implements ActionListener{
         }
     }
     private JButton getToolbarButton() {
-        JButton button = new JButton(getButtonIcon(22));
+        JButton button = new JButton(getButtonIcon());
         button.setToolTipText("Validate Thread Group(s)");
         button.addActionListener(this);
         button.setActionCommand("validate_tg");
