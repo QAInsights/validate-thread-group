@@ -1,6 +1,6 @@
 # 🚀 Validate Thread Group button
 
-Add a `Validate Thread Group` button to the JMeter toolbar.
+Add a `Validate Thread Group(s)` button to the JMeter toolbar.
 
 # 🌟 Why do we need this?
 
@@ -22,14 +22,17 @@ This plugin simply adds `Validate` button feature to the toolbar, so that we don
 * Building using maven `mvn clean package`
 * Copy the generated jar to `JMETER_HOME\lib\ext`
 * Restart JMeter
+* The new "Validate Thread Group(s)" icon will be displayed on the toolbar.
 
-![Validate Thread Group](./images/Valiate-Thread-Group.png)
+  ![Validate Thread Group(s)](./images/Valiate-Thread-Group.png)
 
 * It will also add a menu as shown below which you do not want to use.
 
-![Validate Thread Group Menu](./images/Valiate-Thread-Group-Menu.png)
+  ![Validate Thread Group(s) Menu](./images/Valiate-Thread-Group-Menu.png)
 
 # ✅ Features
 
-* Validates all your test plan at once 
+* Validates all your test plan at once (when no Thread Group is selected in the test plan)
+* Validates a specific Thread group (when selected on the test plan.)
+  - Click on "Thread Group" under the test plan and click "Validate Thread Group(s)" icon on the toolbar.
  
