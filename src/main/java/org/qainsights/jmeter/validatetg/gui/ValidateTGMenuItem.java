@@ -24,12 +24,9 @@ public class ValidateTGMenuItem extends JMenuItem implements ActionListener{
         addToolbarIcon();
     }
 
-    public static ImageIcon getBugIcon(boolean large) {
-        if (large) {
-            return new ImageIcon(Objects.requireNonNull(ValidateTGMenuItem.class.getResource("/org/qainsights/jmeter/validatetg/check-16x16.png")));
-        } else {
-            return new ImageIcon(Objects.requireNonNull(ValidateTGMenuItem.class.getResource("/org/qainsights/jmeter/validatetg/check-16x16.png")));
-        }
+    public static ImageIcon getButtonIcon(int pixelSize) {
+        String sizedImage = String.format("/org/qainsights/jmeter/validatetg/validate-tg-icon-%2dx%2d.png", pixelSize, pixelSize);
+        return new ImageIcon(Objects.requireNonNull(ValidateTGMenuItem.class.getResource(sizedImage)));
     }
 
     private void addToolbarIcon() {
@@ -60,8 +57,8 @@ public class ValidateTGMenuItem extends JMenuItem implements ActionListener{
         }
     }
     private JButton getToolbarButton() {
-        JButton button = new JButton(getBugIcon(true));
-        button.setToolTipText("Validate Thread Group");
+        JButton button = new JButton(getButtonIcon(22));
+        button.setToolTipText("Validate Thread Group(s)");
         button.addActionListener(this);
         button.setActionCommand("validate_tg");
         return button;
@@ -92,6 +89,5 @@ public class ValidateTGMenuItem extends JMenuItem implements ActionListener{
         catch (Exception err) {
             log.debug("Error while TG action performed: " + err);
         }
-
     }
 }
