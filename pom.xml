@@ -6,7 +6,7 @@
 
     <groupId>org.qainsights</groupId>
     <artifactId>validatetg</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1</version>
     <name>Validate Thread Group for JMeter</name>
     <description>Validate Thread Group button for JMeter</description>
     <licenses>
