@@ -52,7 +52,7 @@
         <dependency>
             <groupId>kg.apc</groupId>
             <artifactId>jmeter-plugins-cmn-jmeter</artifactId>
-            <version>0.6</version>
+            <version>0.7</version>
         </dependency>
         <dependency>
             <groupId>kg.apc</groupId>
@@ -95,5 +95,18 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.10.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.weisj</groupId>
+            <artifactId>darklaf</artifactId>
+            <version>1.3.3.4</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.weisj</groupId>
+            <artifactId>darklaf</artifactId>
+            <version>1.3.3.4</version>
+            <type>pom</type>
+        </dependency>
+
     </dependencies>
 </project>
