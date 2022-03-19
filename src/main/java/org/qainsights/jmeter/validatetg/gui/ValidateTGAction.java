@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.net.URISyntaxException;
 import javax.swing.AbstractAction;
 
 class ValidateTGAction extends AbstractAction {
@@ -14,7 +15,7 @@ class ValidateTGAction extends AbstractAction {
     public static final KeyStroke VALIDATE_TG   = KeyStroke.getKeyStroke(KeyEvent.VK_V, InputEvent.ALT_DOWN_MASK);
     private static final Logger log = LoggerFactory.getLogger(ValidateTGAction.class);
 
-    ValidateTGAction() {
+    ValidateTGAction() throws URISyntaxException {
         super("Validate Thread Group(s)");
         putValue(Action.ACTION_COMMAND_KEY, "validate_tg");
         putValue(Action.ACCELERATOR_KEY, VALIDATE_TG);

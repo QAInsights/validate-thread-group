@@ -4,19 +4,31 @@ import org.apache.jmeter.gui.GuiPackage;
 import org.apache.jmeter.gui.MainFrame;
 import org.apache.jmeter.gui.util.JMeterToolBar;
 import org.apache.jmeter.gui.action.ActionRouter;
+import org.apache.jmeter.util.JMeterUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Objects;
 
+import com.github.weisj.darklaf.icons.ThemedSVGIcon;
 
 public class ValidateTGMenuItem extends JMenuItem implements ActionListener{
     private static final Logger log = LoggerFactory.getLogger(ValidateTGMenuItem.class);
-    private static final Action vtg = new ValidateTGAction();
+    private static Action vtg = null;
+
+    static {
+        try {
+            vtg = new ValidateTGAction();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
 
     public ValidateTGMenuItem() {
         super(vtg);
@@ -24,9 +36,15 @@ public class ValidateTGMenuItem extends JMenuItem implements ActionListener{
         addToolbarIcon();
     }
 
-    public static ImageIcon getButtonIcon() {
-        String sizedImage = "/org/qainsights/jmeter/validatetg/check-mark.svg";
-        return new ImageIcon(Objects.requireNonNull(ValidateTGMenuItem.class.getResource(sizedImage)));
+    public static Icon getButtonIcon() throws URISyntaxException {
+        log.debug("Image");
+        String svgResourcePath = "/org/qainsights/jmeter/validatetg/Check-Mark.svg";
+        URL svgUrl = JMeterUtils.class.getResource(svgResourcePath);
+        URI svgUri = null;
+        svgUri = svgUrl.toURI();
+        Icon icon = new ThemedSVGIcon(svgUri, 22, 22);
+
+        return icon;
     }
 
     private void addToolbarIcon() {
@@ -49,14 +67,19 @@ public class ValidateTGMenuItem extends JMenuItem implements ActionListener{
                     }
                     int pos = getPositionForIcon(toolbar.getComponents());
                     log.debug("validate rootPos: " + String.valueOf(pos));
-                    Component toolbarButton = getToolbarButton();
+                    Component toolbarButton = null;
+                    try {
+                        toolbarButton = getToolbarButton();
+                    } catch (URISyntaxException e) {
+                        e.printStackTrace();
+                    }
                     toolbarButton.setSize(toolbar.getComponent(pos).getSize());
                     toolbar.add(toolbarButton, pos);
                 }
             });
         }
     }
-    private JButton getToolbarButton() {
+    private JButton getToolbarButton() throws URISyntaxException {
         JButton button = new JButton(getButtonIcon());
         button.setToolTipText("Validate Thread Group(s)");
         button.addActionListener(this);
@@ -71,7 +94,7 @@ public class ValidateTGMenuItem extends JMenuItem implements ActionListener{
             if(itemClassName.contains("javax.swing.JButton")) {
                 String actionCommandText = ((JButton) item).getModel().getActionCommand();
                 log.debug("Running for iteration: "+ index + ", " + actionCommandText);
-                if (actionCommandText != null && actionCommandText.equals("search_tree")){
+                if (actionCommandText != null && actionCommandText.equals("start")){
                     break;
                 }
             }
