@@ -71,7 +71,7 @@ public class ValidateTGMenuItem extends JMenuItem implements ActionListener{
             if(itemClassName.contains("javax.swing.JButton")) {
                 String actionCommandText = ((JButton) item).getModel().getActionCommand();
                 log.debug("Running for iteration: "+ index + ", " + actionCommandText);
-                if (actionCommandText != null && actionCommandText.equals("search_tree")){
+                if (actionCommandText != null && actionCommandText.equals("start")){
                     break;
                 }
             }

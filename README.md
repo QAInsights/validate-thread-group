@@ -26,7 +26,7 @@ This plugin simply adds `Validate` button feature to the toolbar, so that we don
 
   ![Validate Thread Group(s)](./images/Valiate-Thread-Group.png)
 
-* It will also add a menu as shown below which you do not want to use.
+* Press `Alt + V` without navigating to the menu or clicking on the `Validate Thread Group(s)` button.
 
   ![Validate Thread Group(s) Menu](./images/Valiate-Thread-Group-Menu.png)
 
