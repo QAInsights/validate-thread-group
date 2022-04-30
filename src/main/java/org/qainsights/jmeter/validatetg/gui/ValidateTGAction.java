@@ -7,7 +7,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
-import javax.swing.AbstractAction;
 
 class ValidateTGAction extends AbstractAction {
 
@@ -23,5 +22,6 @@ class ValidateTGAction extends AbstractAction {
 
     public void actionPerformed(ActionEvent actionEvent) {
         log.debug("Validate Thread Groups Action performed from Run menu!");
+
     }
 }
