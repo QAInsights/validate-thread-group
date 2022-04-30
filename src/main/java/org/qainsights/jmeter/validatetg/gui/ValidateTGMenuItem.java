@@ -2,8 +2,9 @@ package org.qainsights.jmeter.validatetg.gui;
 
 import org.apache.jmeter.gui.GuiPackage;
 import org.apache.jmeter.gui.MainFrame;
-import org.apache.jmeter.gui.util.JMeterToolBar;
 import org.apache.jmeter.gui.action.ActionRouter;
+import org.apache.jmeter.gui.util.JMeterToolBar;
+import org.apache.jmeter.threads.JMeterContextService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,14 +15,18 @@ import java.awt.event.ActionListener;
 import java.util.Objects;
 
 
-public class ValidateTGMenuItem extends JMenuItem implements ActionListener{
+public class ValidateTGMenuItem extends JMenuItem implements ActionListener {
+
     private static final Logger log = LoggerFactory.getLogger(ValidateTGMenuItem.class);
     private static final Action vtg = new ValidateTGAction();
+    private static JButton toolbarButton;
+
 
     public ValidateTGMenuItem() {
         super(vtg);
         addActionListener(this);
-        addToolbarIcon();
+        toolbarButton = getToolbarButton();
+        addToolbarIcon(toolbarButton);
     }
 
     public static ImageIcon getButtonIcon(int pixelSize) {
@@ -29,7 +34,7 @@ public class ValidateTGMenuItem extends JMenuItem implements ActionListener{
         return new ImageIcon(Objects.requireNonNull(ValidateTGMenuItem.class.getResource(sizedImage)));
     }
 
-    private void addToolbarIcon() {
+    private void addToolbarIcon(JButton toolbarButton) {
         GuiPackage instance = GuiPackage.getInstance();
         if (instance != null) {
             final MainFrame mf = instance.getMainFrame();
@@ -49,7 +54,6 @@ public class ValidateTGMenuItem extends JMenuItem implements ActionListener{
                     }
                     int pos = getPositionForIcon(toolbar.getComponents());
                     log.debug("validate rootPos: " + String.valueOf(pos));
-                    Component toolbarButton = getToolbarButton();
                     toolbarButton.setSize(toolbar.getComponent(pos).getSize());
                     toolbar.add(toolbarButton, pos);
                 }
@@ -84,10 +88,14 @@ public class ValidateTGMenuItem extends JMenuItem implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         log.debug("Clicked" + e.getActionCommand());
         try {
-            ActionRouter.getInstance().doActionNow(e);
-        }
-        catch (Exception err) {
-            log.debug("Error while TG action performed: " + err);
+//            toolbarButton.setEnabled(false);
+            if(JMeterContextService.getNumberOfThreads() < 1){
+                ActionRouter.getInstance().doActionNow(e);
+            }else{
+                log.info("JMeter run/validation already in progress");
+            }
+        }catch (Exception err) {
+            log.error("Error while TG action performed: " + err);
         }
     }
 }
